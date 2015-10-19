@@ -21,23 +21,34 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'oddstrap' ); ?></a>
+	<a class="sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'oddstrap' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<?php if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php endif; ?>
-			<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'oddstrap' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+	<nav class="navbar navbar-default navbar-static-top">
+		<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+		</div>
+	
+		<?php
+			wp_nav_menu( array(
+				'menu'							=> 'primary',
+				'theme_location'		=> 'primary',
+				'depth'							=> 2,
+				'container'					=> 'div',
+				'container_class'		=> 'collapse navbar-collapse',
+				'container_id'			=> 'bs-example-navbar-collapse-1',
+				'menu_class'				=> 'nav navbar-nav navbar-right',
+				'fallback_cb'				=> 'wp_bootstrap_navwalker::fallback',
+				'walker'						=> new wp_bootstrap_navwalker())
+			);
+		?>
+		</div>
+	</nav>
 
 	<div id="content" class="site-content">

@@ -74,13 +74,13 @@ msgstr ""
 #: footer.php:16
 #, php-format
 #@ _s
-msgid "Proudly powered by %s"
+msgid "Powered by %s"
 msgstr ""
 
 #: footer.php:18
 #, php-format
 #@ _s
-msgid "Theme: %1$s by %2$s."
+msgid "using the %1$s theme built by %2$s."
 msgstr ""
 
 #: functions.php:45
