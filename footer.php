@@ -15,6 +15,11 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container">
+			<div id="footerwidgets" class="widget-area row" role="complementary">
+				<?php dynamic_sidebar( 'footer-1' ); ?>
+			</div><!-- #footerwidgets -->
+
+		
 			<div class="text-muted">
 				&copy; TODO COPYRIGHT TEXT HERE<br>
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'oddstrap' ) ); ?>"><?php printf( esc_html__( 'Powered by %s', 'oddstrap' ), 'WordPress' ); ?></a>

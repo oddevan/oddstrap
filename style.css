@@ -16,5 +16,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 oddStrap is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
-oddStrap also uses Bootstrap 3 which is licensed under the MIT.
+oddStrap also uses Bootstrap 3 which is licensed under the MIT license.
 */
+
+#colophon {
+	background: #eee;
+	padding: 20px 0;
+}
